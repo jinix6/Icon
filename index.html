@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Icon Libery 2.0</title>
+  <meta name="author" content="Jinxx6_6">
+  <meta name="og:title" content="Open Website (FF CRAFTLAND RELATED)">
+  <meta name="og:description" content="Check out this website (ff craftland related)">
+  <meta name="og:image" content="https://dl.dir.freefiremobile.com/common/web_event/crafactory4.4/images/logo_template.png">
+  <meta name="theme-color" content="#CFD8DC">
+  <meta name="google-site-verification" content="J20YkdBYbFS0_YZdIu9Z-sKGKzYZfqOFFkQ0numjLq0" />
+  <meta name="description" content="Free Fire is a multiplayer battle royale mobile game, developed and published by Garena for Android and iOS. Battle in Style and be the last survivor!">
+  <meta  name="keywords" content="survival, last survivor, battle royale, free mobile game, garena game, craftland, ugc, ff craftland, jinxx66, jinxx6_6, jinxx, craftland tutorial, free fire craftland">
+  <link rel="icon" type="image/x-icon" href="https://freefiremobile-a.akamaihd.net/common/web_event/common/images/ff-logo-icon.png">
+</head>
+<body onload="setTimeout(hideain_load, 250);">
+
+<div id="main_load">
+      <div id="loadingsin" role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-80 left-1/2">
+        <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#245A64]" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+
+
+
+
+<div id="dialog_main_bg" class="dialog_main_bg flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+  <div id="background_dia">
+  </div>
+  <div
+    class="container_dialog relative mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+    <img id="cardimage"
+      src="webp/Bigfoot_Shield.webp"
+      alt="card-image" />
+  </div>
+  <div class="p-6">
+    
+    
+    <div id="loading" role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-80 left-1/2">
+        <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#245A64]" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+        <span class="sr-only">Loading...</span>
+    </div>
+    
+    
+    
+    <h5 id="dialog_tittle" class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+      
+    </h5>
+    <p id="dialog_tittle_p" class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+    </p>
+    <p id="dialog_tittle_pp" class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+      
+    </p>
+  </div>
+  <div class="p-6 pt-0">
+    <button data-ripple-light="true" onclick="setTimeout(hide_dialog, 250);"
+      class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-[#607D8B] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+      type="button">
+      Close
+    </button>
+  </div>
+</div>  
+
+    <div class=" container">
+        
+        
+        
+
+   
+
+<div id="input_search_bg" class="w-72">
+  <div class="relative w-full min-w-[200px] h-10">
+    <input onchange="onSearchInputChange(this.value)"
+      class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
+      placeholder=" " /><label
+      class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900">Search 🔎
+    </label>
+  </div>
+</div>  
+
+
+
+        <div class="page" id="webpGallery"></div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+ <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script>
+    
+function hideain_load(){
+      var dialog_main_bg = document.getElementById('main_load');
+      dialog_main_bg.style.visibility = "hidden"
+      
+    }
+    
+    function showeain_load(){
+      var dialog_main_bg = document.getElementById('main_load');
+      dialog_main_bg.style.visibility = "visible"
+      
+    }
+    
+    
+    function hide_dialog(){
+      var dialog_main_bg = document.getElementById('dialog_main_bg');
+      dialog_main_bg.style.visibility = "hidden"
+      
+      var dialog_tittle = document.getElementById('dialog_tittle');
+    dialog_tittle.textContent = "";
+    
+    var dialog_tittle_p = document.getElementById('dialog_tittle_p');
+    dialog_tittle_p.textContent = "";
+    
+    
+    var dialog_tittle_pp = document.getElementById('dialog_tittle_pp');
+    dialog_tittle_pp.textContent = "";
+    
+    }
+    
+
+        let totalPages;
+        let currentPage = 1;
+        let currentSearchTerm = '';
+        const webpsPerPage = 200;
+
+        async function fetchWebps() {
+            const response = await fetch('list.json');
+            return response.json();
+        }
+
+        async function displayPage(pageNumber, searchTerm, webps) {
+    showeain_load(); // Show loading
+    const filteredWebps = filterWebpsBySearch(webps, searchTerm);
+
+    const startIdx = (pageNumber - 1) * webpsPerPage;
+    const endIdx = startIdx + webpsPerPage;
+
+    const webpGallery = document.getElementById('webpGallery');
+    const pagination = document.getElementById('pagination');
+
+    webpGallery.innerHTML = ''; // Clear previous content
+
+    for (let i = startIdx; i < endIdx && i < filteredWebps.length; i++) {
+        const image = document.createElement("img");
+        image.src = filteredWebps[i];
+        image.className = "image";
+        image.addEventListener('click', () => showFileName(getFileName(filteredWebps[i])));
+        image.setAttribute('data-ripple-light', 'true');
+        webpGallery.appendChild(image);
+    }
+
+    totalPages = Math.ceil(filteredWebps.length / webpsPerPage);
+
+    renderPagination(searchTerm, webps);
+
+    hideain_load(); // Hide loading
+}
+        
+        
+     function getFileName(webpUrl) {
+    const parts = webpUrl.split('/');
+    const fullFileName = parts[parts.length - 1];
+
+    // Split the full file name by the dot (.)
+    const fileNameParts = fullFileName.split('.');
+
+    // Get the file name without extension (first part)
+    const fileNameWithoutExtension = fileNameParts[0];
+
+    return fileNameWithoutExtension;
+}
+
+function showFileName(webpUrl) {
+    document.getElementById('loading').style.visibility = "visible"
+    const fileName = getFileName(webpUrl);
+    console.log(fileName);
+
+    var img = document.getElementById('cardimage');
+    img.src = "webp/" + webpUrl + ".webp";
+
+    var dialog_main_bg = document.getElementById('dialog_main_bg');
+    dialog_main_bg.style.visibility = "visible";
+
+    const url = 'https://item-id.vercel.app/?icon_name=' + fileName;
+
+    fetch(url)
+        .then(response => response.text())
+        .then(body => {
+          
+          // Assuming body is the JSON response from your fetch request
+const responseBody = JSON.parse(body);
+
+if ("success" in responseBody && responseBody.success === "True") {
+    const itemDetail = responseBody.item_detail;
+    const icon_name = responseBody.icon_name;
+    const item_id = responseBody.item_id;
+    
+    document.getElementById('loading').style.visibility = "hidden"
+      
+      
+    var dialog_tittle = document.getElementById('dialog_tittle');
+    dialog_tittle.textContent = itemDetail;
+
+    var dialog_tittle_p = document.getElementById('dialog_tittle_p');
+    dialog_tittle_p.textContent = 'ID: ' + item_id;
+
+    var dialog_tittle_pp = document.getElementById('dialog_tittle_pp');
+    dialog_tittle_pp.textContent = 'ICON: ' + fileName;
+    
+} else {
+    document.getElementById('dialog_tittle').textContent = fileName;
+    document.getElementById('dialog_tittle_p').textContent = "This icon name doesn't have an item ID or is an invalid icon name";
+    document.getElementById('dialog_tittle_pp').textContent = "";
+    document.getElementById('loading').style.visibility = "hidden"
+}
+          
+            
+        })
+        .catch(error => {
+            document.getElementById('dialog_tittle').textContent = fileName;
+            document.getElementById('dialog_tittle_p').textContent = "This icon name doesn't have an item ID or is an invalid icon name";
+            document.getElementById('dialog_tittle_pp').textContent = "";
+            document.getElementById('loading').style.visibility = "hidden"
+        });
+}
+        
+
+        function filterWebpsBySearch(webps, searchTerm) {
+          
+        showeain_load()
+          
+            const lowerCaseSearch = searchTerm.toLowerCase();
+            return webps.filter(webp =>
+                webp.toLowerCase().includes(lowerCaseSearch)
+            );
+        }
+
+        function generatePaginationNumbers() {
+            const paginationNumbers = [];
+            const maxVisiblePages = 5;
+
+            if (totalPages <= maxVisiblePages) {
+                for (let i = 1; i <= totalPages; i++) {
+                    paginationNumbers.push(i);
+                }
+            } else {
+                const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+                const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
+                if (startPage > 1) {
+                    paginationNumbers.push('...');
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    paginationNumbers.push(i);
+                }
+
+                if (endPage < totalPages) {
+                    paginationNumbers.push('...');
+                }
+            }
+
+            return paginationNumbers;
+        }
+
+        function renderPagination(searchTerm, webps) {
+    const paginationNumbers = generatePaginationNumbers();
+    const pagination = document.getElementById('pagination');
+
+    pagination.innerHTML = ''; // Clear previous content
+
+    paginationNumbers.forEach((pageNumber) => {
+        const pageButton = document.createElement("button");
+        pageButton.className = "button_2 relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none";
+        pageButton.setAttribute('data-ripple-light', 'true');
+        if (pageNumber === currentPage) {
+            // Highlight the current page with a different background color
+            pageButton.classList.add("current-page");
+        }
+
+        pageButton.textContent = pageNumber === '...' ? '...' : pageNumber;
+        pageButton.addEventListener('click', () => goToPage(pageNumber, searchTerm, webps));
+        pagination.appendChild(pageButton);
+    });
+
+    
+}
+
+        async function goToPage(pageNumber, searchTerm, webps) {
+          if (pageNumber === '...') return;
+        
+          if (pageNumber >= 1 && pageNumber <= totalPages) {
+            currentPage = pageNumber;
+            currentSearchTerm = searchTerm;
+            await displayPage(currentPage, currentSearchTerm, webps);
+            updateCurrentPageSpan();
+          }
+        }
+
+        function updateCurrentPageSpan() {
+            const currentPageSpan = document.querySelector(".pagination span");
+            if (currentPageSpan) {
+                currentPageSpan.textContent = `Page: ${currentPage}`;
+            }
+        }
+
+        function onSearchInputChange(searchTerm) {
+            currentPage = 1;
+            currentSearchTerm = searchTerm;
+            fetchWebps().then(webps => displayPage(currentPage, currentSearchTerm, webps));
+        }
+
+        // Initial fetch and display
+        fetchWebps().then(webps => displayPage(currentPage, currentSearchTerm, webps));
+    </script>
+
+
+
+</body>
+
+</html>
