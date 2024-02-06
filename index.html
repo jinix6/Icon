@@ -16,6 +16,14 @@
   <meta name="description" content="Free Fire is a multiplayer battle royale mobile game, developed and published by Garena for Android and iOS. Battle in Style and be the last survivor!">
   <meta  name="keywords" content="survival, last survivor, battle royale, free mobile game, garena game, craftland, ugc, ff craftland, jinxx66, jinxx6_6, jinxx, craftland tutorial, free fire craftland">
   <link rel="icon" type="image/x-icon" href="https://freefiremobile-a.akamaihd.net/common/web_event/common/images/ff-logo-icon.png">
+  
+  
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+</style>
+  
+  
+  
 </head>
 <body onload="setTimeout(hideain_load, 250);">
 
@@ -29,10 +37,9 @@
 
 
 
-
-<div id="dialog_main_bg" class="dialog_main_bg flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
-  <div id="background_dia">
-  </div>
+<div id="mainnnnn_bg">
+<div id="dialog_main_bg" class="dialog_main_bg flex flex-col text-gray-700 shadow-md bg-clip-border rounded-xl w-96">
+ <div id="background_dia"></div>
   <div
     class="container_dialog relative mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
     <img id="cardimage"
@@ -49,13 +56,13 @@
     
     
     
-    <h5 id="dialog_tittle" class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+    <h5 id="dialog_tittle" class="space-mono-bold  block mb-2  text-base antialiased  leading-snug tracking-normal text-blue-gray-900">
       
     </h5>
-    <p id="dialog_tittle_p" class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+    <p id="dialog_tittle_p" class="space-mono-regular block text-sm antialiased font-light leading-relaxed text-inherit">
       
     </p>
-    <p id="dialog_tittle_pp" class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+    <p id="dialog_tittle_pp" class="space-mono-regular block  text-sm antialiased font-light leading-relaxed text-inherit">
       
     </p>
   </div>
@@ -67,7 +74,7 @@
     </button>
   </div>
 </div>  
-
+</div>
     <div class=" container">
         
         
@@ -94,6 +101,7 @@
  <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
     <script>
     
+    
 function hideain_load(){
       
       document.getElementById("main_load").style.animation ="fadeOut 250ms 1 forwards";
@@ -113,7 +121,7 @@ function hideain_load(){
       
      document.getElementById("dialog_main_bg").style.animation ="fadeOut 250ms 1 forwards";
      
-     
+     document.getElementById("mainnnnn_bg").style.animation ="fadeOut 250ms 1 forwards";
      
       var dialog_tittle = document.getElementById('dialog_tittle');
     dialog_tittle.textContent = "";
@@ -189,6 +197,7 @@ function showFileName(webpUrl) {
     img.src = "webp/" + webpUrl + ".webp";
 
 
+    document.getElementById("mainnnnn_bg").style.animation ="fadeIn 250ms 1 forwards";
     document.getElementById("dialog_main_bg").style.animation ="fadeIn 250ms 1 forwards";
 
     const url = 'https://item-id.vercel.app/?icon_name=' + fileName;
