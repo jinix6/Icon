@@ -53,6 +53,7 @@
       
     </h5>
     <p id="dialog_tittle_p" class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+      
     </p>
     <p id="dialog_tittle_pp" class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
       
@@ -94,8 +95,10 @@
     <script>
     
 function hideain_load(){
-      var dialog_main_bg = document.getElementById('main_load');
-      dialog_main_bg.style.visibility = "hidden"
+      
+      document.getElementById("main_load").style.animation ="fadeOut 250ms 1 forwards";
+      
+      
       
     }
     
@@ -107,9 +110,11 @@ function hideain_load(){
     
     
     function hide_dialog(){
-      var dialog_main_bg = document.getElementById('dialog_main_bg');
-      dialog_main_bg.style.visibility = "hidden"
       
+     document.getElementById("dialog_main_bg").style.animation ="fadeOut 250ms 1 forwards";
+     
+     
+     
       var dialog_tittle = document.getElementById('dialog_tittle');
     dialog_tittle.textContent = "";
     
@@ -183,8 +188,8 @@ function showFileName(webpUrl) {
     var img = document.getElementById('cardimage');
     img.src = "webp/" + webpUrl + ".webp";
 
-    var dialog_main_bg = document.getElementById('dialog_main_bg');
-    dialog_main_bg.style.visibility = "visible";
+
+    document.getElementById("dialog_main_bg").style.animation ="fadeIn 250ms 1 forwards";
 
     const url = 'https://item-id.vercel.app/?icon_name=' + fileName;
 
