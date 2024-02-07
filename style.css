@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: #CFD8DC;
+  background: #ECEFF1;
   height: 100vh;
   margin: 0;
   width: 100%;
@@ -173,4 +173,24 @@ transform: translate(-50%, -50%);
   50% {
     opacity: 0;
   }
+}
+#share_btn{
+ 
+  padding: 3%;
+  
+  border-radius: 200px;
+}
+
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.enabled {
+    pointer-events: visible;
+    opacity: 1;
+}
+#tele_icon{
+  width: 20px;
+  fill: #CFD8DC;
 }

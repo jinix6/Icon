@@ -67,11 +67,20 @@
     </p>
   </div>
   <div class="p-6 pt-0">
+    
     <button data-ripple-light="true" onclick="setTimeout(hide_dialog, 250);"
       class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-[#607D8B] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
       type="button">
       Close
     </button>
+
+  <button id="share_btn" data-ripple-light="true" onclick="setTimeout(Share_tg, 250);"
+      class="align-middle select-none font-sans font-bold text-center uppercase  disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs rounded-lg bg-[#607D8B] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+      type="button">
+      <svg id="tele_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="telegram"><path d="M16.114 9.291c.552-.552 1.1-1.84-1.2-.276a395.806 395.806 0 0 1-6.489 4.372 2.7 2.7 0 0 1-2.117.046c-1.38-.414-2.991-.966-2.991-.966s-1.1-.691.783-1.427c0 0 7.961-3.267 10.722-4.418 1.058-.46 4.647-1.932 4.647-1.932s1.657-.645 1.519.92c-.046.644-.414 2.9-.782 5.338-.553 3.451-1.151 7.225-1.151 7.225s-.092 1.058-.874 1.242a3.787 3.787 0 0 1-2.3-.828c-.184-.138-3.451-2.209-4.648-3.221a.872.872 0 0 1 .046-1.473 169.31 169.31 0 0 0 4.835-4.602Z"></path></svg>
+    </button>
+
+
   </div>
 </div>  
 </div>
@@ -84,7 +93,7 @@
 
 <div id="input_search_bg" class="w-72">
   <div class="relative w-full min-w-[200px] h-10">
-    <input onchange="onSearchInputChange(this.value)"
+    <input id="input_d" onchange="onSearchInputChange(this.value)"
       class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
       placeholder=" " /><label
       class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900">Search 🔎
@@ -99,240 +108,7 @@
         <div class="pagination" id="pagination"></div>
     </div>
  <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
-    <script>
-    
-    
-function hideain_load(){
-      
-      document.getElementById("main_load").style.animation ="fadeOut 250ms 1 forwards";
-      
-      
-      
-    }
-    
-    function showeain_load(){
-      var dialog_main_bg = document.getElementById('main_load');
-      dialog_main_bg.style.visibility = "visible"
-      
-    }
-    
-    
-    function hide_dialog(){
-      
-     document.getElementById("dialog_main_bg").style.animation ="fadeOut 250ms 1 forwards";
-     
-     document.getElementById("mainnnnn_bg").style.animation ="fadeOut 250ms 1 forwards";
-     
-      var dialog_tittle = document.getElementById('dialog_tittle');
-    dialog_tittle.textContent = "";
-    
-    var dialog_tittle_p = document.getElementById('dialog_tittle_p');
-    dialog_tittle_p.textContent = "";
-    
-    
-    var dialog_tittle_pp = document.getElementById('dialog_tittle_pp');
-    dialog_tittle_pp.textContent = "";
-    
-    }
-    
-
-        let totalPages;
-        let currentPage = 1;
-        let currentSearchTerm = '';
-        const webpsPerPage = 200;
-
-        async function fetchWebps() {
-            const response = await fetch('list.json');
-            return response.json();
-        }
-
-        async function displayPage(pageNumber, searchTerm, webps) {
-    showeain_load(); // Show loading
-    const filteredWebps = filterWebpsBySearch(webps, searchTerm);
-
-    const startIdx = (pageNumber - 1) * webpsPerPage;
-    const endIdx = startIdx + webpsPerPage;
-
-    const webpGallery = document.getElementById('webpGallery');
-    const pagination = document.getElementById('pagination');
-
-    webpGallery.innerHTML = ''; // Clear previous content
-
-    for (let i = startIdx; i < endIdx && i < filteredWebps.length; i++) {
-        const image = document.createElement("img");
-        image.src = filteredWebps[i];
-        image.className = "image";
-        image.addEventListener('click', () => showFileName(getFileName(filteredWebps[i])));
-        image.setAttribute('data-ripple-light', 'true');
-        webpGallery.appendChild(image);
-    }
-
-    totalPages = Math.ceil(filteredWebps.length / webpsPerPage);
-
-    renderPagination(searchTerm, webps);
-
-    hideain_load(); // Hide loading
-}
-        
-        
-     function getFileName(webpUrl) {
-    const parts = webpUrl.split('/');
-    const fullFileName = parts[parts.length - 1];
-
-    // Split the full file name by the dot (.)
-    const fileNameParts = fullFileName.split('.');
-
-    // Get the file name without extension (first part)
-    const fileNameWithoutExtension = fileNameParts[0];
-
-    return fileNameWithoutExtension;
-}
-
-function showFileName(webpUrl) {
-    document.getElementById('loading').style.visibility = "visible"
-    const fileName = getFileName(webpUrl);
-    console.log(fileName);
-
-    var img = document.getElementById('cardimage');
-    img.src = "webp/" + webpUrl + ".webp";
-
-
-    document.getElementById("mainnnnn_bg").style.animation ="fadeIn 250ms 1 forwards";
-    document.getElementById("dialog_main_bg").style.animation ="fadeIn 250ms 1 forwards";
-
-    const url = 'https://item-id.vercel.app/?icon_name=' + fileName;
-
-    fetch(url)
-        .then(response => response.text())
-        .then(body => {
-          
-          // Assuming body is the JSON response from your fetch request
-const responseBody = JSON.parse(body);
-
-if ("success" in responseBody && responseBody.success === "True") {
-    const itemDetail = responseBody.item_detail;
-    const icon_name = responseBody.icon_name;
-    const item_id = responseBody.item_id;
-    
-    document.getElementById('loading').style.visibility = "hidden"
-      
-      
-    var dialog_tittle = document.getElementById('dialog_tittle');
-    dialog_tittle.textContent = itemDetail;
-
-    var dialog_tittle_p = document.getElementById('dialog_tittle_p');
-    dialog_tittle_p.textContent = 'ID: ' + item_id;
-
-    var dialog_tittle_pp = document.getElementById('dialog_tittle_pp');
-    dialog_tittle_pp.textContent = 'ICON: ' + fileName;
-    
-} else {
-    document.getElementById('dialog_tittle').textContent = fileName;
-    document.getElementById('dialog_tittle_p').textContent = "This icon name doesn't have an item ID or is an invalid icon name";
-    document.getElementById('dialog_tittle_pp').textContent = "";
-    document.getElementById('loading').style.visibility = "hidden"
-}
-          
-            
-        })
-        .catch(error => {
-            document.getElementById('dialog_tittle').textContent = fileName;
-            document.getElementById('dialog_tittle_p').textContent = "This icon name doesn't have an item ID or is an invalid icon name";
-            document.getElementById('dialog_tittle_pp').textContent = "";
-            document.getElementById('loading').style.visibility = "hidden"
-        });
-}
-        
-
-        function filterWebpsBySearch(webps, searchTerm) {
-          
-        showeain_load()
-          
-            const lowerCaseSearch = searchTerm.toLowerCase();
-            return webps.filter(webp =>
-                webp.toLowerCase().includes(lowerCaseSearch)
-            );
-        }
-
-        function generatePaginationNumbers() {
-            const paginationNumbers = [];
-            const maxVisiblePages = 5;
-
-            if (totalPages <= maxVisiblePages) {
-                for (let i = 1; i <= totalPages; i++) {
-                    paginationNumbers.push(i);
-                }
-            } else {
-                const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-                const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
-
-                if (startPage > 1) {
-                    paginationNumbers.push('...');
-                }
-
-                for (let i = startPage; i <= endPage; i++) {
-                    paginationNumbers.push(i);
-                }
-
-                if (endPage < totalPages) {
-                    paginationNumbers.push('...');
-                }
-            }
-
-            return paginationNumbers;
-        }
-
-        function renderPagination(searchTerm, webps) {
-    const paginationNumbers = generatePaginationNumbers();
-    const pagination = document.getElementById('pagination');
-
-    pagination.innerHTML = ''; // Clear previous content
-
-    paginationNumbers.forEach((pageNumber) => {
-        const pageButton = document.createElement("button");
-        pageButton.className = "button_2 relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none";
-        pageButton.setAttribute('data-ripple-light', 'true');
-        if (pageNumber === currentPage) {
-            // Highlight the current page with a different background color
-            pageButton.classList.add("current-page");
-        }
-
-        pageButton.textContent = pageNumber === '...' ? '...' : pageNumber;
-        pageButton.addEventListener('click', () => goToPage(pageNumber, searchTerm, webps));
-        pagination.appendChild(pageButton);
-    });
-
-    
-}
-
-        async function goToPage(pageNumber, searchTerm, webps) {
-          if (pageNumber === '...') return;
-        
-          if (pageNumber >= 1 && pageNumber <= totalPages) {
-            currentPage = pageNumber;
-            currentSearchTerm = searchTerm;
-            await displayPage(currentPage, currentSearchTerm, webps);
-            updateCurrentPageSpan();
-          }
-        }
-
-        function updateCurrentPageSpan() {
-            const currentPageSpan = document.querySelector(".pagination span");
-            if (currentPageSpan) {
-                currentPageSpan.textContent = `Page: ${currentPage}`;
-            }
-        }
-
-        function onSearchInputChange(searchTerm) {
-            currentPage = 1;
-            currentSearchTerm = searchTerm;
-            fetchWebps().then(webps => displayPage(currentPage, currentSearchTerm, webps));
-        }
-
-        // Initial fetch and display
-        fetchWebps().then(webps => displayPage(currentPage, currentSearchTerm, webps));
-    </script>
-
+<script src="script.js"></script>
 
 
 </body>
