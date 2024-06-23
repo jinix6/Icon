@@ -2,6 +2,11 @@
 
 [See Icon Libery](https://jinix6.github.io/Icon/)
 
+
+
+### Resources
+OB44 All ItemID (json Format):[**GitHub Link**](https://github.com/jinix6/Icon/blob/main/ob44.json), [**Telegram Link**](https://t.me/freefirecraftland/131)
+
 ## ⭐️ Star Our Repository
 
 If you find this project helpful, please consider giving it a star on GitHub! 🌟
