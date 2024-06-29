@@ -7,6 +7,9 @@
 ### Resources
 OB44 All ItemID (json Format):[**GitHub Link**](https://github.com/jinix6/Icon/blob/main/ob44.json), [**Telegram Link**](https://t.me/freefirecraftland/131)
 
+OB45 Added ItemID (json Format): [**Telegram Link**](https://t.me/freefirecraftland/133)
+
+
 ## ⭐️ Star Our Repository
 
 If you find this project helpful, please consider giving it a star on GitHub! 🌟
